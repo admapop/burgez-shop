@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { auth } from '../../firebase/firebase.utils';
+import CartIcon from '../cart-icon/CartIcon';
+import CartDropdown from '../cart-dropdown/CartDropdown';
 
 // import { ReactComponent as Logo } from 'blablabla' this is for SVGs
 
 import './header.styles.scss'
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, hidden }) => {
   return (
     <div className='header'>
       <Link className='logo-container' to="/">
@@ -28,13 +30,16 @@ const Header = ({ currentUser }) => {
           :
           <Link className='option' to='/signin'>SIGN IN</Link>
         }
-      </div>
+        <CartIcon />
+      </div> 
+      { hidden ? null : <CartDropdown /> }
     </div>
   )
 }
 
-const mapStateToProps = state => ({
-  currentUser: state.user.currentUser
+const mapStateToProps = ({user: { currentUser }, cart: { hidden }}) => ({
+  currentUser,
+  hidden
 })
 
 export default connect(mapStateToProps)(Header);
