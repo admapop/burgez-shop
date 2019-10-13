@@ -14,13 +14,12 @@ const CollectionsOverviewWithSpinner = WithSpinner(CollectionsOverview);
 const CollectionPageWithSpinner = WithSpinner(CollectionPage)
 
 class ShopPage extends Component {
-  // unsubscribeFromSnapshot = null;
 
   componentDidMount() {
     const { fetcCollectionsStartAsync } = this.props
     fetcCollectionsStartAsync()
   }
-  
+
   render() {
     const { match, isCollectiongFetching } = this.props
     return (
