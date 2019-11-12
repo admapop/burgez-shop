@@ -31,22 +31,6 @@ class SignUp extends Component {
     } else {
       const { signUpStart } = this.props
       signUpStart({email, password, displayName})
-
-      // try {
-      //   const { user } = await auth.createUserWithEmailAndPassword(email, password);
-
-      //   await createUserProfileDocument(user, { displayName });
-
-      //   this.setState({
-      //     displayName: '',
-      //     email: '',
-      //     password: '',
-      //     confirmPassword: ''
-      //   })
-
-      // } catch (error) {
-      //   console.error(error);
-      // }
     }
   };
 
