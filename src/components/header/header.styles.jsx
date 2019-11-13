@@ -14,6 +14,12 @@ width: 100%;
 display: flex;
 justify-content: space-between;
 margin-bottom: 25px;
+
+@media screen and (max-width: 800px) {
+  height: 60px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
 `
 
 export const LogoContainer = styled(Link)`
@@ -23,6 +29,14 @@ padding: 25px;
 img {
   width: 150px;
 }
+
+@media screen and (max-width: 800px) {
+  width: 50px;
+  padding: 0;
+  img {
+    width: 80px;
+  }
+}
 `
 
 export const OptionsContainer = styled.div`
@@ -31,6 +45,10 @@ height: 100%;
 display: flex;
 align-items: center;
 justify-content: flex-end;
+
+@media screen and (max-width: 800px) {
+  width: 60%;
+}
 `
 
 //using the as= attribute to change this to div if needed
